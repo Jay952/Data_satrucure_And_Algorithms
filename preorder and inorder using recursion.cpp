@@ -43,7 +43,7 @@ void Preorder(struct node *root)
 
 void Inorder(struct node *root)
 {
-	if(root->==0)
+	if(root==0)
 	{
 		return;
 	  	}
@@ -53,6 +53,16 @@ void Inorder(struct node *root)
 }
 
 
+void Postorder(struct node *root)
+{
+	if(root==0)
+	{
+		return;
+	}
+	Postorder(root->left);
+	Postorder(root->right);
+	cout<<root->data<<" ";
+}
 
 int main()
 {
