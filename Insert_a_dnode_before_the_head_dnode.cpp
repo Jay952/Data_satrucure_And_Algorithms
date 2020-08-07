@@ -48,6 +48,31 @@ int main(){
 		cout<<r->data<<" ";
 		r = r->next;
 	}
+	cout<<"\n";
+	int response2;
+	cout<<"Enter 1 if you want to add a dnode before the head node\n";
+	cin>>response2;
+	if(response == 1){
+		struct dnode *t;
+		t = new dnode();
+		cout<<"Enter data in the new dnode before head:";
+		cin>>t->data;
+		t->next = head;
+		t->prev = NULL;
+		head->prev = t;
+		head = t;
+	}
+	
+	
+	struct dnode *u;
+	u = head;
+	cout<<"Data of all nodes after inserting a new node before head node are respectively: ";
+	while(u != NULL){
+		cout<<u->data<<" ";
+		u = u->next;
+	}
+	
+	
 	
 	return 0;
 }
